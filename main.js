@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calSizeDrag (){
     if(window.innerWidth>=540)
-    return window.innerWidth/3
+    return window.innerWidth/3>=500?500:window.innerWidth/3
     return 120
   }
 
