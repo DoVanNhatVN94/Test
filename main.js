@@ -53,9 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     isDragging = true;
     prevSize = currentSize
     startPosX = getPositionX(event);
-    console.log("🚀 ~ dragStart ~ startPosX:", startPosX)
     prevTranslate = currentTranslate;
-    console.log("🚀 ~ dragStart ~ prevTranslate:", prevTranslate)
     cancelAnimationFrame(animationId);
   }
 
@@ -102,13 +100,12 @@ document.addEventListener("DOMContentLoaded", function () {
     slides.classList.remove('drag')
     if (currentIndex < slides.children.length - 1) {
       currentIndex++;
-      console.log('next');
       setPositionByIndex(currentIndex);
     }
   }
 
   carousel.addEventListener("mousedown", dragStart);
-  carousel.addEventListener("touchstart", dragStart);
+  slides.addEventListener("touchstart", dragStart);
 
   carousel.addEventListener("mousemove", dragMove);
   carousel.addEventListener("touchmove", dragMove);
