@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function calSizeDrag (){
     if(window.innerWidth>=540)
     return window.innerWidth/3
-    return 150
+    return 120
   }
 
   function transformSlides(translate) {
@@ -107,17 +107,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  carousel.addEventListener("mousedown", dragStart);
-  carousel.addEventListener("touchstart", dragStart);
+  slides.addEventListener("mousedown", dragStart);
+  slides.addEventListener("touchstart", dragStart);
 
-  carousel.addEventListener("mousemove", dragMove);
-  carousel.addEventListener("touchmove", dragMove);
+  slides.addEventListener("mousemove", dragMove);
+  slides.addEventListener("touchmove", dragMove);
 
-  carousel.addEventListener("mouseup", dragEnd);
-  carousel.addEventListener("touchend", dragEnd);
+  slides.addEventListener("mouseup", dragEnd);
+  slides.addEventListener("touchend", dragEnd);
 
-  carousel.addEventListener("mouseleave", dragEnd);
-  carousel.addEventListener("touchcancel", dragEnd);
+  slides.addEventListener("mouseleave", dragEnd);
+  slides.addEventListener("touchcancel", dragEnd);
   
   document.getElementById('btn_prev').onclick = prevSlide
   document.getElementById('btn_next').onclick = nextSlide
