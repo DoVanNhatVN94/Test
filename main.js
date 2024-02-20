@@ -111,13 +111,13 @@ document.addEventListener("DOMContentLoaded", function () {
   slides.addEventListener("touchstart", dragStart);
 
   carousel.addEventListener("mousemove", dragMove);
-  carousel.addEventListener("touchmove", dragMove);
+  slides.addEventListener("touchmove", dragMove);
 
   carousel.addEventListener("mouseup", dragEnd);
-  carousel.addEventListener("touchend", dragEnd);
+  slides.addEventListener("touchend", dragEnd);
 
   carousel.addEventListener("mouseleave", dragEnd);
-  carousel.addEventListener("touchcancel", dragEnd);
+  slides.addEventListener("touchcancel", dragEnd);
   
   document.getElementById('btn_prev').onclick = prevSlide
   document.getElementById('btn_next').onclick = nextSlide

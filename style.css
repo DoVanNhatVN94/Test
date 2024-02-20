@@ -11,11 +11,13 @@ html{
         font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 .carousel {
+    height: 100vh;
     position: relative;
     overflow: hidden;
   }
   
   .slides {
+    height: 100%;
     display: flex;
     transition: transform 0.5s ease;
   }
@@ -24,7 +26,7 @@ html{
   }
   
   .slide {
-    height: 100vh;
+    height: 100%;
     width: 100%;
     line-height: 1;
 
