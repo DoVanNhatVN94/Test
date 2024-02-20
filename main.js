@@ -16,11 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let width = window.innerWidth;
   console.log("🚀 ~ document.addEventListener ~ width:", width)
 
+  function calSizeDrag (){
+    if(window.innerWidth>=540)
+    return window.innerWidth/2
+    return 150
+  }
 
   function transformSlides(translate) {
     currentSize = translate
     slides.style.transform = `translateX(${translate}px)`;
   }
+
   function updateCarousel(currentIndex) {
     if (currentIndex === 0) {
       prevBtn.classList.add('hidden');
@@ -34,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
       nextBtn.classList.remove('hidden');
     }
   }
-
 
   function setPositionByIndex(index) {
     const slideWidth = carousel.querySelector(".slide").offsetWidth;
@@ -53,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("🚀 ~ dragStart ~ prevTranslate:", prevTranslate)
     cancelAnimationFrame(animationId);
   }
+
   function dragMove(event) {
     if (isDragging) {
       const currentPositionX = getPositionX(event);
@@ -60,17 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
       transformSlides(0 + currentPositionX - startPosX + prevSize);
       prevTranslate = 0
     }
-
   }
 
   function dragEnd() {
     if (isDragging) {
       isDragging = false;
       const movedBy = currentTranslate - prevTranslate;
-      if (movedBy < -(window.innerWidth/2) && currentIndex < slides.children.length - 1) {
+      if (movedBy < (-calSizeDrag()) && currentIndex < slides.children.length - 1) {
         ++currentIndex;
       }
-      if (movedBy > (window.innerWidth/2)  && currentIndex > 0) {
+      if (movedBy > (calSizeDrag())  && currentIndex > 0) {
         --currentIndex;
       }
       slides.classList.remove('drag')
