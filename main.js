@@ -108,16 +108,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   carousel.addEventListener("mousedown", dragStart);
-  slides.addEventListener("touchstart", dragStart);
+  carousel.addEventListener("touchstart", dragStart);
 
   carousel.addEventListener("mousemove", dragMove);
-  slides.addEventListener("touchmove", dragMove);
+  carousel.addEventListener("touchmove", dragMove);
 
   carousel.addEventListener("mouseup", dragEnd);
-  slides.addEventListener("touchend", dragEnd);
+  carousel.addEventListener("touchend", dragEnd);
 
   carousel.addEventListener("mouseleave", dragEnd);
-  slides.addEventListener("touchcancel", dragEnd);
+  carousel.addEventListener("touchcancel", dragEnd);
   
   document.getElementById('btn_prev').onclick = prevSlide
   document.getElementById('btn_next').onclick = nextSlide
