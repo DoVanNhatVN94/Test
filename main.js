@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function calSizeDrag (){
     if(window.innerWidth>=540)
-    return window.innerWidth/2
+    return window.innerWidth/3
     return 150
   }
 
@@ -60,7 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function dragMove(event) {
+    
     if (isDragging) {
+      event.preventDefault()
       const currentPositionX = getPositionX(event);
       currentTranslate = prevTranslate + currentPositionX - startPosX;
       transformSlides(0 + currentPositionX - startPosX + prevSize);
@@ -68,8 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function dragEnd() {
+  function dragEnd(event) {
     if (isDragging) {
+      event.preventDefault()
       isDragging = false;
       const movedBy = currentTranslate - prevTranslate;
       if (movedBy < (-calSizeDrag()) && currentIndex < slides.children.length - 1) {
