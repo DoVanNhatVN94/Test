@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #eee;
+}
+html{
+    font-size: 18px;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slides.drag{
+    transition-duration: 0s;
+  }
+  
+  .slide {
+    height: 100vh;
+    width: 100%;
+    line-height: 1;
+
+    background: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 100%;
+  }
+  
+
+ 
+  
+  
+  .prev,.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 60px;
+    color: #007aff;
+    border: none;
+    background: transparent;
+  }
+  .next{
+    right: 10px;
+  }.prev{
+    left: 10px;
+  }
+
+
+  
+  button.hidden{
+    opacity: .35;
+    cursor: default;
+  }
